@@ -11,3 +11,14 @@ int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 int listen(int sockfd, int backlog);
 int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen);
 ```
+
+I/O 멀티플렉싱을 위한 kqueue
+```
+int kqueue(void);
+int kevent(int kq,
+           const struct kevent *changelist, 
+           int nchanges,
+           struct kevent *eventlist,
+           int nevents,
+           const struct timespec *timeout);
+```
